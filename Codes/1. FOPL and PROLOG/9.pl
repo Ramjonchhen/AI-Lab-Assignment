@@ -1,0 +1,10 @@
+mammal("horse").
+mammal("cow").
+mammal("pig").
+offspring_type("horse","horse").
+parent("bluebeard","charlie").
+is_of_type("bluebeard","horse").
+is_of_type(X,T1):-mammal(T1),
+				  parent(P,X),
+				  is_of_type(P,T2),
+				  offspring_type(T2,T1).
